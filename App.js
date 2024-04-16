@@ -20,6 +20,12 @@ const sessionOptions = {
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
+    proxy: true,
+    cookie: {
+        sameSite: "none",
+        secure: true,
+        domain: "kanbas-node-server-app-1-mds9.onrender.com",
+    },
 };
 app.use(
     session(sessionOptions)
